@@ -14,7 +14,7 @@ const {
   productsFromServiceSuccessful,
   productFromServiceSuccessful,
   productFromServiceNotFound,
-} = require('../mocks/product.mock');
+} = require('../mocks/product.mocks');
 
 describe('Realizando testes - PRODUCT CONTROLLER:', function () {
   it('Recuperando products com sucesso - status 200', async function () {

@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const sinon = require('sinon');
 const { productService } = require('../../../src/services');
-const { productFromDB, productsFromDB, productNotFound } = require('../mocks/product.mock');
+const { productFromDB, productsFromDB, productNotFound } = require('../mocks/product.mocks');
 
 describe('Realizando testes - PRODUCT SERVICE:', function () {
   it('Recuperando product por id com sucesso', async function () {
