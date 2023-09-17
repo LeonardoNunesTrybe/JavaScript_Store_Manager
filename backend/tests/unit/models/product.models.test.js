@@ -21,8 +21,20 @@ describe('Realizando testes - PRODUCT MODEL:', function () {
     const products = await productModel.findAll();
 
     expect(products).to.be.deep.equal(productsFromDB);
+    expect(products).to.have.lengthOf(3);
+    expect(products).to.be.an('array');
     expect(products.length).to.equal(3);
   });
+
+  /* / it('Inserindo product com sucesso', async function () {
+    sinon.stub(connection, 'execute').resolves([productIdFromDB]);
+
+    const inputData = { id: 4, name: 'João Bosco' };
+    const insertId = await productModel.insert(inputData);
+
+    // expect(insertId).to.be.a('array');
+    expect(insertId).to.be.equal(productIdFromDB);
+  });/ */
 
   afterEach(function () {
     sinon.restore();

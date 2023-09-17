@@ -38,6 +38,20 @@ const productFromServiceNotFound = {
   data: { message: 'message' },
 };
 
+const productFromServiceCreated = {
+  status: 'CREATED',
+  data: productFromDB,
+};
+
+const productFromServiceInvalidValue = {
+  status: 'INVALID_VALUE',
+  data: { message: 'message' },
+};
+
+const productIdFromDB = { id: 4, name: 'João Bosco' };
+
+const newProductFromModel = 6;
+
 module.exports = {
   productFromDB,
   productsFromDB,
@@ -45,4 +59,8 @@ module.exports = {
   productFromServiceSuccessful,
   productFromServiceNotFound,
   productNotFound,
+  productFromServiceCreated,
+  productFromServiceInvalidValue,
+  productIdFromDB,
+  newProductFromModel,
 };
