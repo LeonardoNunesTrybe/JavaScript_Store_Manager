@@ -13,7 +13,7 @@ const {
   salesFromDB,
   salesFromServiceSuccessful,
   saleFromServiceSuccessful,
-  saleFromServiceNotFound,
+  // saleFromServiceNotFound,
 } = require('../mocks/sale.mocks');
 
 describe('Realizando testes - SALE CONTROLLER:', function () {
