@@ -25,23 +25,8 @@ describe('Realizando testes - SALE MIDDLEWARE', function () {
     expect(next).to.not.have.been.calledWith();
   });
 
-  /* /it('Testa se o middleware de validação do sale retorna erro quando productId for inexistente', async function () {
-    const req = { body: {} };
-    const res = {
-      status: sinon.stub().returnsThis(),
-      json: sinon.stub(),
-    };
-
-    const next = sinon.stub().returns();
-    validateSaleProductId(req, res, next);
-
-    expect(res.status).to.have.been.calledWith(404);
-    expect(res.json).to.have.been.calledWithExactly({ message: 'Product not found' });
-    expect(next).to.not.have.been.calledWith();
-  });/ */
-
-  /* /it('Testa se o middleware de validação do product chama o next quando name estiver correto', async function () {
-    const req = { body: { producId: 1 } };
+  it('Testa se o middleware de validação do product chama o next quando produtoId estiver correto', async function () {
+    const req = { body: { productId: 1 } };
     const res = {
       status: sinon.stub().returnsThis(),
       json: sinon.stub(),
@@ -51,7 +36,7 @@ describe('Realizando testes - SALE MIDDLEWARE', function () {
     validateSaleProductId(req, res, next);
 
     expect(next).to.have.been.calledWith();
-  });/ */
+  });
 
   it('Testa se o middleware de validação do sale retorna erro quando não for passado quantity', async function () {
     const req = { body: { quantity: '' } };
@@ -73,7 +58,7 @@ describe('Realizando testes - SALE MIDDLEWARE', function () {
     expect(next).to.not.have.been.calledWith();
   });
 
-  it('Testa se o middleware de validação do product chama o next quando name estiver correto', async function () {
+  it('Testa se o middleware de validação do product chama o next quando quantity estiver correto', async function () {
     const req = { body: { quantity: 1 } };
     const res = {
       status: sinon.stub().returnsThis(),

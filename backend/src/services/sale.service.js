@@ -1,5 +1,4 @@
 const { saleModel } = require('../models');
-const { validateNewSale } = require('./validations/validationsInputValues');
 
 const findAll = async () => {
   const sales = await saleModel.findAll();
@@ -13,13 +12,13 @@ const findById = async (id) => {
   return { status: 'SUCCESSFUL', data: sale };
 };
 
-const createSale = async ({ productId, quantity }) => {
-  const error = validateNewSale({ productId, quantity });
-  if (error) return { status: error.status, data: { message: error.message } };
-
-  const sale = await saleModel.insert({ productId, quantity });
-  const newSale = { id: sale, productId, quantity };
-  return { status: 'CREATED', data: newSale };
+const createSale = async (sale) => {
+  try {
+    const insertSale = await saleModel.insert(sale);
+    return { status: 'CREATED', data: insertSale };    
+  } catch (error) {
+    return { status: error.status, data: { message: 'Product not found' } };
+  }
 };
 
 module.exports = {
