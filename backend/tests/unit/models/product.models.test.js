@@ -26,16 +26,14 @@ describe('Realizando testes - PRODUCT MODEL:', function () {
     expect(products.length).to.equal(3);
   });
 
-  // *** VERIFICAR O Q ESTA OCORRENDO AQUI ***
-  /* /it('Inserindo product com sucesso', async function () {
-    sinon.stub(connection, 'execute').resolves([productIdFromDB]);
+  it('Inserindo product com sucesso', async function () {
+    sinon.stub(connection, 'execute').resolves([{ insertId: 4 }]);
 
-    const inputData = { id: 99, name: 'João Bosco' };
-    const insertId = await productModel.insert(inputData);
+    const inputData = { name: 'João Bosco' };
+    const result = await productModel.insert(inputData);
 
-    // expect(insertId).to.be.a('array');
-    expect(insertId).to.be.equal(productIdFromDB);
-  });/ */
+    expect(result).to.be.equal(4);
+  });
 
   afterEach(function () {
     sinon.restore();

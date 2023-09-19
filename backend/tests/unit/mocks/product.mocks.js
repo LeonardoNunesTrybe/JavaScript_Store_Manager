@@ -48,7 +48,7 @@ const productFromServiceInvalidValue = {
   data: { message: 'message' },
 };
 
-const productIdFromDB = { id: 99, name: 'João Bosco' };
+const productIdFromDB = { name: 'João Bosco' };
 
 const newProductFromModel = 6;
 
