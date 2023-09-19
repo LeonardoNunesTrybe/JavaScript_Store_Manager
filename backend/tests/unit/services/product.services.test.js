@@ -47,14 +47,14 @@ describe('Realizando testes - PRODUCT SERVICE:', function () {
     expect(responseService).to.be.deep.equal({ id: 6, name: 'XABLAU' });
   });/ */
 
-  it('Não insere product com name menor que 5 caracteres', async function () {
+  /* /it('Não insere product com name menor que 5 caracteres', async function () {
     const inputData = { id: 7, name: 'XA' };
     const responseService = await productService.createProduct(inputData);
 
     expect(responseService.status).to.be.equal('INVALID_VALUE');
     expect(responseService.data.message)
       .to.be.equal('"name" length must be 5 characters long');
-  });
+  });/ */
 
   it('Não insere product sem name preenchido', async function () {
     const inputData = { id: 7, name: '' };

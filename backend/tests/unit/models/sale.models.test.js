@@ -22,6 +22,17 @@ describe('Realizando testes - SALE MODEL:', function () {
     expect(sales).to.be.deep.equal(salesFromDB);
   });
 
+  it('Recuperando sale por id sem sucesso', async function () {
+    sinon.stub(connection, 'execute').resolves([]);
+
+    const inputData = 10;
+    const sale = await saleModel.findById(inputData);
+
+    expect(sale).to.deep.equal();
+    // expect(sale.status).to.be.equal(404);
+    // expect(sale.body).to.deep.equal({ message: 'Sale not found' });
+  });
+
   afterEach(function () {
     sinon.restore();
   });
