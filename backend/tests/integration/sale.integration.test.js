@@ -23,7 +23,8 @@ describe('Testando se requisição de sales esta funcionando', function () {
     expect(response.body).to.be.instanceOf(Array);
   });
 
-  /* /it('Testando POST /sales', async function () {
+  // *** AQUI ESTA DANDO UM ERRO COM O SQL***
+  /* /it('Testando POST /sales com sucesso', async function () {
     const mockSale = [{
       productId: 1,
       quantity: 5,

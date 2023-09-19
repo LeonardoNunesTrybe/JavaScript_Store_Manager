@@ -74,6 +74,8 @@ describe('Realizando testes - PRODUCT CONTROLLER:', function () {
     await productController.createProduct(req, res);
     expect(res.status).to.have.been.calledWith(201);
     expect(res.json).to.have.been.calledWith(productFromDB);
+    expect(res.json).to.have.been.calledWith(sinon.match.has('name'));
+    expect(res.json).to.have.been.calledWith(sinon.match.has('id'));
   });
 
   it('Não insere product com params errado - status 422', async function () {

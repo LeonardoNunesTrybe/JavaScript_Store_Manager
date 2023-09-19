@@ -26,10 +26,11 @@ describe('Realizando testes - PRODUCT MODEL:', function () {
     expect(products.length).to.equal(3);
   });
 
-  /* / it('Inserindo product com sucesso', async function () {
+  // *** VERIFICAR O Q ESTA OCORRENDO AQUI ***
+  /* /it('Inserindo product com sucesso', async function () {
     sinon.stub(connection, 'execute').resolves([productIdFromDB]);
 
-    const inputData = { id: 4, name: 'João Bosco' };
+    const inputData = { id: 99, name: 'João Bosco' };
     const insertId = await productModel.insert(inputData);
 
     // expect(insertId).to.be.a('array');

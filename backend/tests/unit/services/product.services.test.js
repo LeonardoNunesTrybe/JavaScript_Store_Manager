@@ -34,28 +34,31 @@ describe('Realizando testes - PRODUCT SERVICE:', function () {
       status: 'NOT_FOUND',
       data: { message: 'Product not found' },
     });
+    expect(product).to.be.an('object');
   });
 
-  /* /it('Inserindo product com sucesso', async function () {
-    sinon.stub(productModel, 'insert').resolves(newProductFromModel);
-    sinon.stub(productModel, 'findById').resolves(productFromDB);
+  // ***DESCOBRIR O Q ESTA ERRADO AQUI - COMO USAR O MIDDLEWARE PARA VALIDAR OS PROXIMOS ITS***
+  /* / it('Inserindo product com sucesso', async function () {
+    sinon.stub(productService, 'createProduct').resolves(newProductFromModel);
+    sinon.stub(productService, 'findById').resolves(productFromDB);
 
-    const inputData = { id: 6, name: 'XABLAU' };
+    const inputData = { name: 'XABLAU' };
     const responseService = await productService.createProduct(inputData);
 
     // expect(responseService.status).to.be.equal('CREATED');
-    expect(responseService).to.be.deep.equal({ id: 6, name: 'XABLAU' });
-  });/ */
+    expect(responseService).to.be.equal({ name: 'XABLAU' });
+  });
 
-  /* /it('Não insere product com name menor que 5 caracteres', async function () {
+  it('Não insere product com name menor que 5 caracteres', async function () {
     const inputData = { id: 7, name: 'XA' };
     const responseService = await productService.createProduct(inputData);
 
     expect(responseService.status).to.be.equal('INVALID_VALUE');
     expect(responseService.data.message)
       .to.be.equal('"name" length must be 5 characters long');
-  });/ */
+  }); / */
 
+  // *** PQ ESSE ESTA PASSANDO ***
   it('Não insere product sem name preenchido', async function () {
     const inputData = { id: 7, name: '' };
     const responseService = await productService.createProduct(inputData);
