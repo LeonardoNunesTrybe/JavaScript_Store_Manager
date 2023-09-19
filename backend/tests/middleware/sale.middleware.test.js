@@ -11,7 +11,7 @@ const validateSaleQuantity = require('../../src/middlewares/validateSaleQuantity
 
 describe('Realizando testes - SALE MIDDLEWARE', function () {
   it('Testa se o middleware de validação do sale retorna erro quando não for passado productId', async function () {
-    const req = { body: { producId: '' } };
+    const req = { body: [{}] };
     const res = {
       status: sinon.stub().returnsThis(),
       json: sinon.stub(),
@@ -26,7 +26,7 @@ describe('Realizando testes - SALE MIDDLEWARE', function () {
   });
 
   it('Testa se o middleware de validação do product chama o next quando produtoId estiver correto', async function () {
-    const req = { body: { productId: 1 } };
+    const req = { body: [{ productId: 1 }] };
     const res = {
       status: sinon.stub().returnsThis(),
       json: sinon.stub(),
@@ -39,7 +39,7 @@ describe('Realizando testes - SALE MIDDLEWARE', function () {
   });
 
   it('Testa se o middleware de validação do sale retorna erro quando não for passado quantity', async function () {
-    const req = { body: { quantity: '' } };
+    const req = { body: [{ quantity: '' }] };
     const res = { status: sinon.stub().returnsThis(), json: sinon.stub() };
     const next = sinon.stub().returns();
     validateSaleQuantity(req, res, next);
@@ -49,7 +49,7 @@ describe('Realizando testes - SALE MIDDLEWARE', function () {
   });
 
   it('Testa se o middleware de validação do sale retorna erro quando quantity for menor que 1', async function () {
-    const req = { body: { quantity: '0' } };
+    const req = { body: [{ quantity: '0' }] };
     const res = { status: sinon.stub().returnsThis(), json: sinon.stub() };
     const next = sinon.stub().returns();
     validateSaleQuantity(req, res, next);
@@ -59,7 +59,7 @@ describe('Realizando testes - SALE MIDDLEWARE', function () {
   });
 
   it('Testa se o middleware de validação do product chama o next quando quantity estiver correto', async function () {
-    const req = { body: { quantity: 1 } };
+    const req = { body: [{ quantity: 1 }] };
     const res = {
       status: sinon.stub().returnsThis(),
       json: sinon.stub(),

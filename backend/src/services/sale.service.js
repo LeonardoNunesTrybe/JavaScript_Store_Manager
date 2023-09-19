@@ -17,7 +17,8 @@ const createSale = async (sale) => {
     const insertSale = await saleModel.insert(sale);
     return { status: 'CREATED', data: insertSale };    
   } catch (error) {
-    return { status: error.status, data: { message: 'Product not found' } };
+    console.log(error);
+    return { status: 'NOT_FOUND', data: { message: 'Product not found' } };
   }
 };
 
